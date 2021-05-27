@@ -8,7 +8,7 @@ from textwrap import wrap
 class AmongUsMod(loader.Module):
 	"""Символ пмздабольства 2020"""
 	strings = {
-		"name": "Among Us"
+		"name": "Selffuck"
 	}
 
 	async def client_ready(self, client, db):
@@ -17,9 +17,9 @@ class AmongUsMod(loader.Module):
 	
 	@loader.owner
 	async def sayliecmd(self, message):
-		clrs = {'red': 1, 'lime': 2, 'green': 3, 'blue': 4, 'cyan': 5, 'brown': 6, 'purple': 7, 'pink': 8, 'orange': 9, 'yellow': 10, 'white': 11, 'black': 12}
+		clrs = {'sol': 1, 'sağ': 2, 'sol ters': 3, 'sağ ters': 4}
 		"""текст или реплай"""
-		clr = randint(1,12)
+		clr = randint(1,4)
 		text = utils.get_args_raw(message)
 		reply = await message.get_reply_message()
 		if text in clrs:
@@ -42,7 +42,7 @@ class AmongUsMod(loader.Module):
 			await message.edit("Доступные цвета:\n"+("\n".join([f"• <code>{i}</code>" for i in list(clrs.keys())])))
 			return
 		
-		url = "https://raw.githubusercontent.com/KeyZenD/AmongUs/master/"
+		url = "https://raw.githubusercontent.com/Selfuucuk/Selffuck/master/"
 		font = ImageFont.truetype(BytesIO(get(url+"bold.ttf").content), 60)
 		imposter = Image.open(BytesIO(get(f"{url}{clr}.png").content))
 		text_ = "\n".join(["\n".join(wrap(part, 30)) for part in text.split("\n")])
