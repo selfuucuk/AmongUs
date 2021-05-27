@@ -6,7 +6,7 @@ from PIL import Image, ImageFont, ImageDraw
 from textwrap import wrap
 
 class AmongUsMod(loader.Module):
-	"""Символ пмздабольства 2020"""
+	
 	strings = {
 		"name": "Selffuck"
 	}
@@ -17,9 +17,9 @@ class AmongUsMod(loader.Module):
 	
 	@loader.owner
 	async def sayliecmd(self, message):
-		clrs = {'sol': 1, 'sağ': 2, 'sol ters': 3, 'sağ ters': 4}
-		"""текст или реплай"""
-		clr = randint(1,4)
+		clrs = {'sf': 1, 'sf': 2, 'sf': 3, 'sf': 4, 'sf': 5, 'sf': 6, 'sf': 7, 'sf': 8, 'sf': 9, 'sf': 10, 'sf': 11, 'sf': 12, 'sf': 13, 'sf': 14, 'sf': 15, 'sf': 16, 'sf': 17, 'sf': 18, 'sf': 19}
+
+		clr = randint(1,19)
 		text = utils.get_args_raw(message)
 		reply = await message.get_reply_message()
 		if text in clrs:
@@ -56,7 +56,7 @@ class AmongUsMod(loader.Module):
 		image.paste(text, (w-text.width, 0), text)
 		image.thumbnail((512, 512))
 		output = BytesIO()
-		output.name = "imposter.webp"
+		output.name = "selffuck.webp"
 		image.save(output)
 		output.seek(0)
 		await message.delete()
